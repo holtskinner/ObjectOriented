@@ -1,2 +1,2 @@
 # CS3330
-Projects from Object-Oriented Programming
+Challenges from Object-Oriented Programming at the University of Missouri
