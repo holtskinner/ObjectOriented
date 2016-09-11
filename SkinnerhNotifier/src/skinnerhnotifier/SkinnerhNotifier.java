@@ -2,20 +2,20 @@ package skinnerhnotifier;
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
-/**
+/*
  *
- * @author HS047694
- */
+ *@author   skinnerh
+ *          Holt Skinner
+ *          CS3330
+            Challenge 4 - Notifier
+*/
 public class SkinnerhNotifier extends Application {
     
     public String appName = "Notifier";
