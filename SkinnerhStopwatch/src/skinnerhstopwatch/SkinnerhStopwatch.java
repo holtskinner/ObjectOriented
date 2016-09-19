@@ -10,6 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -21,37 +22,37 @@ import javafx.util.Duration;
  * 9-21-16
  */
 public class SkinnerhStopwatch extends Application {
+    private String appName = "SkinnerhStopwatch";
+    
+    private Button startButton;
+    private Button stopButton;
+    private Button resetButton;
+    
+    private GridPane rootContainer;
     
     @Override
     public void start(Stage primaryStage) {
+
+        AnalogStopWatch analogStopWatch = new AnalogStopWatch();
         
-        StackPane root = new StackPane();
+//        startButton = new Button("Start");
+//        stopButton = new Button("Stop");
+//        resetButton = new Button("Reset");
+//        
+//        rootContainer.add(startButton, 1, 5);
+//        rootContainer.add(stopButton, 2, 5);
+//        rootContainer.add(resetButton, 3, 5);
         
-        ImageView dialImageView = new ImageView();
-        ImageView handImageView = new ImageView();
-        root.getChildren().addAll(dialImageView, handImageView);
         
-        Image dialImage = new Image(getClass().getResourceAsStream("clockface.png"));
-        Image handImage = new Image(getClass().getResourceAsStream("hand.png"));
+        Scene scene = new Scene(analogStopWatch.getRootContainer(), 
+                                analogStopWatch.getWidth(), 
+                                analogStopWatch.getHeight());
         
-        dialImageView.setImage(dialImage);
-        handImageView.setImage(handImage);
-        
-        Scene scene = new Scene(root, 300, 300);
-        
-        primaryStage.setTitle("StopWatch");
+        primaryStage.setTitle(appName);
         primaryStage.setScene(scene);
         primaryStage.show();
         
-        double handAngle = 0;
-        
-        Timeline timeLine = new Timeline( new KeyFrame(Duration.millis(1000), (ActionEvent actionEvent) -> {
-            handImageView.setRotate(handImageView.getRotate() + 6);
-            //handAngle+=6;
-        }));
-        
-        timeLine.setCycleCount(Animation.INDEFINITE);
-        timeLine.play();
+        analogStopWatch.start();
     }
 
     /**
@@ -60,5 +61,5 @@ public class SkinnerhStopwatch extends Application {
     public static void main(String[] args) {
         launch(args);
     }
-    
+
 }
