@@ -8,35 +8,31 @@ package skinnerhstopwatchfxml;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.animation.Animation;
-import static javafx.animation.Animation.Status.RUNNING;
-import static javafx.animation.Animation.Status.STOPPED;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.util.Duration;
 
 /**
  * FXML Controller class
  *
- * @author Holt Skinner
+ * @author muitprogram
  */
 public class FXMLDocumentController implements Initializable {
 
+    /**
+     * Initializes the controller class.
+     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        setupTimer();
-        
+        // TODO
     }
     
     @FXML
     private ImageView handImageView;
-    
-    @FXML
-    private Label digitalClock;
     
     private double tickTimeInSeconds = 0.01; 
     private final double angleDeltaPerSeconds = 6.0;
@@ -74,29 +70,10 @@ public class FXMLDocumentController implements Initializable {
         double rotation = secondsElapsed * angleDeltaPerSeconds;
         handImageView.setRotate(rotation);
         
-        digitalClock.setText(String.format("%02d:%02.2f",  
-                            (int)(secondsElapsed/60),
-                            secondsElapsed % 60));
+//        digitalClock.setText(String.format("%02d:%02.2f",  
+//                            (int)(secondsElapsed/60),
+//                            secondsElapsed % 60));
          
-    }
-    
-    public void start() {
-        if(timeline.getStatus() != RUNNING){
-            timeline.play();
-        }
-    }
-    
-    public void stop() {
-        if(timeline.getStatus()!= STOPPED){
-            timeline.stop();
-        }
-    }
-    
-    public void reset() {
-        stop();
-        secondsElapsed = 0;
-        handImageView.setRotate(0);
-        digitalClock.setText("0:00.00");
     }
     
 }
