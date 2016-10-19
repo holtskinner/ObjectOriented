@@ -47,18 +47,18 @@ public class CatVisualizer implements Visualizer{
         this.height = vizPane.getHeight();
         this.width = vizPane.getWidth();
         
-        bandWidth = width / numBands;
-        
         catImageViews = new ImageView[numBands];
         catImage = new Image(getClass().getResourceAsStream(catImageName));
+        
+        bandWidth = width/numBands;
+ 
         
         for(int i = 0; i < numBands; i++) {
             ImageView catImageView = new ImageView();
             catImageView.setImage(catImage);
+     
+            catImageView.setX((bandWidth *i));
             catImageView.setFitWidth(bandWidth);
-            
-            catImageView.setX(bandWidth * i);
-            catImageView.setY(i*(catImage.getHeight()/10));
             
             vizPane.getChildren().add(catImageView);
             catImageViews[i] = catImageView;
@@ -86,7 +86,7 @@ public class CatVisualizer implements Visualizer{
         Integer num = min(catImageViews.length, magnitudes.length);
         
         for (int i = 0; i < num; i++) {
-            catImageViews[i].setRotate((magnitudes[i]*10 -25));
+            catImageViews[i].setRotate((magnitudes[i]*10 - 25));
         }
     }
 }
