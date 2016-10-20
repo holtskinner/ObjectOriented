@@ -71,6 +71,7 @@ public class PlayerController implements Initializable {
         
         visualizers = new ArrayList<>();
         visualizers.add(new CatVisualizer());
+        visualizers.add(new CircleVisualizer());
         visualizers.add(new EllipseVisualizer1());
         visualizers.add(new EllipseVisualizer2());
         visualizers.add(new EllipseVisualizer3());
