@@ -71,6 +71,9 @@ public class PlayerController implements Initializable {
         
         visualizers = new ArrayList<>();
         visualizers.add(new CatVisualizer());
+        visualizers.add(new EllipseVisualizer1());
+        visualizers.add(new EllipseVisualizer2());
+        visualizers.add(new EllipseVisualizer3());
         for (Visualizer visualizer : visualizers) {
             MenuItem menuItem = new MenuItem(visualizer.getName());
             menuItem.setUserData(visualizer);
