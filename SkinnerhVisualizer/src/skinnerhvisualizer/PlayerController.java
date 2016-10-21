@@ -70,7 +70,6 @@ public class PlayerController implements Initializable {
         bandsText.setText(Integer.toString(numBands));
         
         visualizers = new ArrayList<>();
-        visualizers.add(new CatVisualizer());
         visualizers.add(new CircleVisualizer());
         visualizers.add(new EllipseVisualizer1());
         visualizers.add(new EllipseVisualizer2());

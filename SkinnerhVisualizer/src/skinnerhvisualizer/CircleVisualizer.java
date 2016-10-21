@@ -27,11 +27,13 @@ public class CircleVisualizer implements Visualizer {
     private Double bandHeight = 0.0;
     private final Double bandHeightPercentage = 0.5;
     
+    private double radius = 0.0;
+    
     private Ellipse[] circles;
     
-    private double defaultCircleRadius = 10.0;
+    private final double defaultCircleRadius = 10.0;
     
-    private Random random;
+    private Random random = null;
     private Double hue = 0.0;
     private Double xPosition = 0.0;
     private Double yPosition = 0.0;
@@ -63,14 +65,15 @@ public class CircleVisualizer implements Visualizer {
         bandHeight = height * bandHeightPercentage;
         
         random = new Random(System.currentTimeMillis());
-        
-        
+                
         for(int i = 0; i < numBands; i++) {
+            
             Ellipse circle = new Ellipse(defaultCircleRadius, defaultCircleRadius);
             
             hue = random.nextDouble() * 360.0;
-            xPosition = random.nextDouble() * 500;
-            yPosition = random.nextDouble() * 400;
+            xPosition = random.nextDouble() * width;
+            yPosition = random.nextDouble() * height;
+            
             circle.setCenterX(xPosition);
             circle.setCenterY(yPosition);
             
@@ -83,7 +86,7 @@ public class CircleVisualizer implements Visualizer {
     }
     
     @Override
-    public void end(){
+    public void end() {
         if(circles != null) {
             for (Ellipse circle : circles) {
                  vizPane.getChildren().remove(circle);
@@ -99,7 +102,8 @@ public class CircleVisualizer implements Visualizer {
         }
         
         Integer num = min(circles.length, magnitudes.length);
-        double radius = 0.0;
+
+        
         for (int i = 0; i < num; i++) {
             radius = ((60.0 + magnitudes[i])/60.0) * (bandHeight/2) + defaultCircleRadius;
             circles[i].setRadiusX(radius);
