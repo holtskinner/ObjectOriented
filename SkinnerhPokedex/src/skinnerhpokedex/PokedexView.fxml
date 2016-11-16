@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import java.lang.*?>
 <?import java.net.*?>
 <?import java.util.*?>
@@ -7,8 +8,31 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" fx:controller="skinnerhpokedex.PokedexViewController">
+<AnchorPane id="AnchorPane" prefHeight="365.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="skinnerhpokedex.PokedexViewController">
     <stylesheets>
-        <URL value="@pokedexview.css"/>
+        <URL value="@pokedexview.css" />
     </stylesheets>
+   <children>
+      <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="600.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="About">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <ListView layoutY="27.0" prefHeight="373.0" prefWidth="200.0" />
+      <ScrollPane layoutX="200.0" layoutY="200.0" prefHeight="200.0" prefWidth="401.0">
+         <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="399.0" />
+         </content>
+      </ScrollPane>
+      <ImageView fitHeight="174.0" fitWidth="401.0" layoutX="200.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true" />
+   </children>
 </AnchorPane>
