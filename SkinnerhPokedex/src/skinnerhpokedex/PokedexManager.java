@@ -8,6 +8,7 @@ package skinnerhpokedex;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
@@ -15,6 +16,8 @@ import java.net.URL;
 import java.net.URLEncoder;
 import java.util.ArrayList;
 import org.json.simple.*;
+//import org.springframework.web.client.RestTemplate;
+//import org.springframework.http.client.support.InterceptingHttpAccessor;
 
 /**
  *
@@ -30,7 +33,9 @@ public class PokedexManager {
     private URL url;
     
     private String pokemonFilePath = "";
+    
     private ArrayList<Pokemon> pokemonArray;
+    
     int numberOfPokemon = 151;
     
     public PokedexManager() {
@@ -47,14 +52,14 @@ public class PokedexManager {
 //        }
         
         String jsonString = "";
-        BufferedReader in;
+
         String inputLine = "";
         
         //Get first 151 Pokemon (first gen)
-        for (int i = 1; i <= numberOfPokemon; i++) {
+        //for (int i = 1; i <= numberOfPokemon; i++) {
             
-            urlString = baseUrl + String.valueOf(i); //Add id of pokemon to API URL string
-            
+            //urlString = baseUrl + String.valueOf(i); //Add id of pokemon to API URL string
+            urlString = baseUrl;
             try {
                 url = new URL(urlString);
             } catch (MalformedURLException muex) {
@@ -62,8 +67,8 @@ public class PokedexManager {
             }
             
             try {
-                in = new BufferedReader(
-                new InputStreamReader(url.openStream()));
+                InputStream openStream = url.openStream();
+                BufferedReader in = new BufferedReader(new InputStreamReader(openStream));
 
                 while ((inputLine = in.readLine()) != null) {
                   jsonString += inputLine;  
@@ -71,7 +76,7 @@ public class PokedexManager {
 
                 in.close();
 
-            } catch (IOException ioex) {
+            } catch (Exception ioex) {
                 throw ioex;
             }
             
@@ -81,7 +86,7 @@ public class PokedexManager {
                 throw ex;
             }
              
-        }//end for
+        //}//end for
     }
     
     private void parseJSONData(String jsonString) throws Exception{
@@ -98,6 +103,11 @@ public class PokedexManager {
             throw ex;
         }
         
+        if (tempObject == null){
+            return;
+        } else {
+            System.out.println(tempObject);
+        }
     }
     
     public ArrayList<Pokemon> getPokemons() {
