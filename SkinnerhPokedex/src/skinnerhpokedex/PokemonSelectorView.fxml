@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.scene.image.*?>
 <?import java.lang.*?>
 <?import java.net.*?>
@@ -27,12 +28,15 @@
           </Menu>
         </menus>
       </MenuBar>
-      <ListView layoutY="27.0" prefHeight="373.0" prefWidth="200.0" />
-      <ScrollPane layoutX="200.0" layoutY="200.0" prefHeight="200.0" prefWidth="401.0">
-         <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="399.0" />
-         </content>
-      </ScrollPane>
-      <ImageView fitHeight="174.0" fitWidth="401.0" layoutX="200.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true" />
+      <AnchorPane layoutY="27.0" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="93.0" prefWidth="600.0" text="Pick a Pokemon" textAlignment="CENTER" textFill="#d30000" underline="true">
+               <font>
+                  <Font name="Courier New" size="48.0" />
+               </font>
+            </Label>
+            <ListView layoutY="92.0" prefHeight="245.0" prefWidth="600.0" />
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>
