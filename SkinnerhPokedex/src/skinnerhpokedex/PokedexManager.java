@@ -6,6 +6,7 @@
 package skinnerhpokedex;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
@@ -21,4 +22,22 @@ import org.json.simple.*;
  */
 public class PokedexManager {
     
+    private final String baseUrl = "http://pokeapi.co/api/v2/";
+    private String urlString = "";
+    
+    private String pokemonFilePath = "";
+    private ArrayList<Pokemon> pokemonArray;
+    
+    public PokedexManager() {
+        //Check for json file in package
+        File pokemonFile = new File(pokemonFilePath);
+        if (!pokemonFile.exists()) {
+            
+        }
+        pokemonArray = new ArrayList<>();
+    }
+    
+    private void callAPI() {
+        
+    }
 }
