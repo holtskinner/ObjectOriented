@@ -23,10 +23,7 @@ public class FortuneTellerViewController implements Initializable {
     
     @FXML
     private ImageView fortuneCookieImageView;
-    
-    @FXML
-    private Image fortuneCookieImage;
-    
+        
     @FXML
     private TextField output;
     
