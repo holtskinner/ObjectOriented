@@ -9,6 +9,6 @@
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="skinnerhfortuneteller.FortuneTellerViewController">
    <children>
       <TextField fx:id="output" layoutX="147.0" layoutY="96.0" prefHeight="25.0" prefWidth="308.0" />
-      <Button fx:id="getFortune" layoutX="256.0" layoutY="188.0" mnemonicParsing="false" onAction="#getFortune" text="Get a Fortune" />
+      <Button fx:id="getFortuneButton" layoutX="256.0" layoutY="188.0" mnemonicParsing="false" onAction="#getFortune" onMouseClicked="#getFortune" text="Get a Fortune" />
    </children>
 </AnchorPane>

@@ -12,6 +12,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 /**
  *
@@ -19,44 +21,19 @@ import javafx.scene.control.TextField;
  */
 public class FortuneTellerViewController implements Initializable {
     
-    String urlString = "https://helloacm.com/api/fortune/";
-    
-    String response = "";
-    
-    URL url;
+    @FXML
+    private ImageView fortuneCookieImageView;
     
     @FXML
-    private Button getFortune;
+    private Image fortuneCookieImage;
     
     @FXML
     private TextField output;
     
     @FXML
-    private void getFortune(ActionEvent event) {
+    public void getFortune() {
         
-        try {
-            callAPI();
-        } catch (Exception e) {
-        }
-        
-        output.setText(response);
-    }
-    
-    private void callAPI() throws Exception {
-        
-        try {
-            url = new URL(urlString);
-            BufferedReader in = new BufferedReader(
-            new InputStreamReader(url.openStream()));
-
-            String inputLine;
-            while ((inputLine = in.readLine()) != null)
-                response += inputLine;
-            in.close();
-        } catch (Exception ex) {
-            throw ex;
-        }
-        
+        output.setText("Insert Fortune Here");
     }
     
     @Override
