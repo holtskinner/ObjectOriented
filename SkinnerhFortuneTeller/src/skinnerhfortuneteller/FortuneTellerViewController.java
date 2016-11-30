@@ -9,11 +9,16 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.Menu;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.GridPane;
+import javafx.scene.text.Text;
 
 /**
  *
@@ -25,12 +30,21 @@ public class FortuneTellerViewController implements Initializable {
     private ImageView fortuneCookieImageView;
         
     @FXML
-    private TextField output;
+    private Text output;
     
     @FXML
     public void getFortune() {
         
         output.setText("Insert Fortune Here");
+    }
+    
+    @FXML
+    private void displayAbout(ActionEvent event) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("About");
+        alert.setHeaderText("SkinnerhFortuneTeller");
+        alert.setContentText("CS 3330 Final Project developed by Holt Skinner.");
+        alert.showAndWait();
     }
     
     @Override

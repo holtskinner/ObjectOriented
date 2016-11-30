@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.image.*?>
 <?import java.lang.*?>
@@ -18,18 +19,23 @@
               <MenuItem mnemonicParsing="false" text="Close" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
+          <Menu mnemonicParsing="false" text="Help">
             <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
+              <MenuItem mnemonicParsing="false" onAction="#displayAbout" text="About" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="About" />
         </menus>
       </MenuBar>
       <ImageView fx:id="fortuneCookieImageView" fitHeight="150.0" fitWidth="200.0" layoutX="219.0" layoutY="164.0" onMouseClicked="#getFortune" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@cookie.jpg" />
          </image></ImageView>
-      <Text fx:id="output" layoutX="221.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Click the Cookie for a fortune!" />
+      <Text id="output" fx:id="output" layoutX="67.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Click the Cookie for a fortune!" textAlignment="CENTER" textOrigin="CENTER">
+         <font>
+            <Font name="Chiller" size="53.0" />
+         </font>
+         <effect>
+            <DropShadow blurType="GAUSSIAN" color="WHITE" spread="0.91" />
+         </effect></Text>
    </children>
 </AnchorPane>

@@ -15,9 +15,9 @@ public class SkinnerhFortuneTeller extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("FortuneTellerView.fxml"));
-        
+        root.setId("background");
         Scene scene = new Scene(root);
-        
+        scene.getStylesheets().addAll(this.getClass().getResource("style.css").toExternalForm());
         stage.setScene(scene);
         stage.show();
     }
