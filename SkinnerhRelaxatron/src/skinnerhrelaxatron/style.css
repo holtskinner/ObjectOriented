@@ -1,0 +1,12 @@
+/* 
+    Created on : Nov 30, 2016, 4:21:54 PM
+    Author     : HS047694
+*/
+
+#background {
+    -fx-background-image: url("background.jpg");
+    -fx-background-repeat: stretch;   
+    -fx-background-size: cover;
+    -fx-background-position: center center;
+    -fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0); 
+}
