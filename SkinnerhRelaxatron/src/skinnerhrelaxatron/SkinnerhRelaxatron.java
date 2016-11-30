@@ -21,6 +21,7 @@ public class SkinnerhRelaxatron extends Application {
         
         stage.setScene(scene);
         stage.setTitle("Relaxatron");
+        
         //Sets icon in upper left corner of window
         stage.getIcons().add(new Image(getClass().getResourceAsStream("icon.png")));
         stage.show();
