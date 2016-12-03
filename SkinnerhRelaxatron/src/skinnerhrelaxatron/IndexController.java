@@ -31,8 +31,7 @@ public class IndexController extends ViewController  {
         pages.set(2, "Rain Drops");
         pages.set(3, "Puppies");
         
-        listOfPages.setItems((ObservableList) pages);
-        
+        listOfPages.setItems((ObservableList) pages);    
     }
 
 }

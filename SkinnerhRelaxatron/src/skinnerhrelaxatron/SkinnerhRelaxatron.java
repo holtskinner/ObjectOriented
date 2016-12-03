@@ -9,7 +9,9 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author HS047694
+ * @author Holt Skinner
+ *          skinnerh
+ *          Final Project
  */
 public class SkinnerhRelaxatron extends Application {
     
