@@ -15,7 +15,7 @@ import javafx.scene.control.ListView;
  *
  * @author HS047694
  */
-public class IndexController extends ViewController  {
+public class IndexController extends ViewController{
     
     @FXML
     ListView listOfPages;
@@ -26,12 +26,10 @@ public class IndexController extends ViewController  {
     private void loadListView() {
         pages = new ArrayList<>();
         
-        pages.set(0, "Cat Videos");
-        pages.set(1, "Soothing Music");
-        pages.set(2, "Rain Drops");
-        pages.set(3, "Puppies");
+        pages.set(0, "Rain Drops");
+        pages.set(1, "Puppies");
         
         listOfPages.setItems((ObservableList) pages);    
     }
-
+     
 }
