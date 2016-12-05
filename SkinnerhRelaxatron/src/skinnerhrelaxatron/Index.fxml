@@ -37,6 +37,7 @@
             <Font name="Comic Sans MS" size="34.0" />
          </font>
       </Text>
-      <ListView fx:id="listOfPages" layoutX="190.0" layoutY="186.0" onEditStart="#loadListView" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #4873A3;" />
+      <Button fx:id="puppiesButton" layoutX="271.0" layoutY="250.0" mnemonicParsing="false" onAction="#goToPuppiesPage" text="Puppies" />
+      <Button layoutX="263.0" layoutY="319.0" mnemonicParsing="false" text="Rain Drops" />
    </children>
 </AnchorPane>

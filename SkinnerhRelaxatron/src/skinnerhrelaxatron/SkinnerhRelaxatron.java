@@ -21,6 +21,8 @@ public class SkinnerhRelaxatron extends Application {
         
         Scene scene = new Scene(root);
         
+        ViewController.scene = scene;
+        ViewController.switchTo("Index");
         stage.setScene(scene);
         stage.setTitle("Relaxatron");
         
