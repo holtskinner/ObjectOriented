@@ -17,7 +17,7 @@ import javafx.scene.control.ListView;
  *
  * @author HS047694
  */
-public class IndexController extends ViewController{
+public class IndexController extends ViewController {
     
     @FXML
     Button puppiesButton;
@@ -26,10 +26,13 @@ public class IndexController extends ViewController{
     Button rainButton;
     
     @FXML
+    Button encouragementButton;
+   
+    @FXML
     public void goToPuppiesPage() throws Exception {
         try {
            ViewController.switchTo("Puppy");
-           ViewController controller = (ViewController)getControllerByName("Puppy");
+           PuppyController controller = (PuppyController)getControllerByName("Puppy");
         } catch (Exception ex) {
             System.out.println("Could not load Controller");
         }
@@ -39,11 +42,20 @@ public class IndexController extends ViewController{
     public void goToRainDropsPage() throws Exception {
         try {
             ViewController.switchTo("RainDrops");
-            ViewController controller = (ViewController)getControllerByName("RainDrops");
+            RainDropsController controller = (RainDropsController)getControllerByName("RainDrops");
+            controller.mediaPlayer.play();
+        } catch (Exception ex) {
+            System.out.println(ex);
+        }
+    }
+    
+    @FXML
+    public void goToEncouragementPage() throws Exception {
+        try {
+            ViewController.switchTo("Encouragement");
+            EncouragementController controller = (EncouragementController)getControllerByName("Encouragement");
         } catch (Exception ex) {
             System.out.println("Could not load Controller");
-
         }
-
     }
 }

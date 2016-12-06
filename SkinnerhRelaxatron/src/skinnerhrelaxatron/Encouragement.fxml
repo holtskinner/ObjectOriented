@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.image.*?>
-<?import javafx.scene.media.*?>
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #1762a1;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="skinnerhrelaxatron.RainDropsController">
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #1762a1;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="skinnerhrelaxatron.EncouragementController">
    <children>
       <MenuBar prefHeight="25.0" prefWidth="600.0" style="-fx-background-color: #4873A3;">
          <menus>
@@ -29,11 +29,11 @@
             </Menu>
          </menus>
       </MenuBar>
-      <Button fx:id="backButton" layoutX="270.0" layoutY="33.0" mnemonicParsing="false" onAction="#goToIndexPage" style="-fx-background-color: #4873A3;" text="Go Back" />
-      <MediaView fx:id="mediaView" fitHeight="200.0" fitWidth="200.0" layoutX="200.0" layoutY="200.0" />
-      <ImageView fx:id="rainImageView" fitHeight="338.0" fitWidth="635.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@rain.jpg" />
-         </image></ImageView>
+      <Text layoutX="107.0" layoutY="189.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Could Not Load Message">
+         <font>
+            <Font name="Comic Sans MS" size="34.0" />
+         </font>
+      </Text>
+      <Button fx:id="backButton" layoutX="275.0" layoutY="47.0" mnemonicParsing="false" onAction="#goToIndexPage" style="-fx-background-color: #4873A3;" text="Go Back" />
    </children>
 </AnchorPane>

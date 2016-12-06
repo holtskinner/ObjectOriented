@@ -8,10 +8,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #1762a1;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="skinnerhrelaxatron.IndexController">
-    <stylesheets>
-        <URL value="@index.css" />
-    </stylesheets>
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #1762a1;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="skinnerhrelaxatron.IndexController">
    <children>
       <MenuBar prefHeight="25.0" prefWidth="600.0" style="-fx-background-color: #4873A3;">
         <menus>
@@ -39,5 +36,6 @@
       </Text>
       <Button fx:id="puppiesButton" layoutX="271.0" layoutY="250.0" mnemonicParsing="false" onAction="#goToPuppiesPage" text="Puppies" />
       <Button fx:id="rainButton" layoutX="263.0" layoutY="319.0" mnemonicParsing="false" onAction="#goToRainDropsPage" text="Rain Drops" />
+      <Button fx:id="encouragementButton" layoutX="225.0" layoutY="283.0" mnemonicParsing="false" onAction="#goToEncouragementPage" text="Words of Encouragement" />
    </children>
 </AnchorPane>
