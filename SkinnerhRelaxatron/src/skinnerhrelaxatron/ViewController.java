@@ -42,7 +42,6 @@ public abstract class ViewController implements Initializable {
                 controller = (ViewController)loader.getController();
                 controller.setRoot(root);
                 controllers.put(name, controller);
-                System.out.println(controllers);
             } catch (Exception ex) {
                 System.out.println("Error loading " + name + ".fxml\n" + ex);
                 controller = null;
