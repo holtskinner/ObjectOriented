@@ -23,15 +23,16 @@ public class PuppyController extends ViewController {
     @FXML
     public void goToIndexPage() {
         ViewController.switchTo("Index");
-        PuppyController controller = (PuppyController)getControllerByName("Index");
+        ViewController controller = (ViewController)getControllerByName("Index");
+        videoView.getEngine().loadContent(""); //Clears the video so it doesn't keep playing
     }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
         videoView.getEngine().load(
             "https://www.youtube.com/embed/mRf3-JkwqfU?autoplay=1"
         );
+        //Credit to Youtube user MashupZone https://www.youtube.com/channel/UCCLFxVP-PFDk7yZj208aAgg
     }
     
 }

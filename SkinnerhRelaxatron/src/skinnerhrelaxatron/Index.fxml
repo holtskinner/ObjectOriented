@@ -13,7 +13,7 @@
         <URL value="@index.css" />
     </stylesheets>
    <children>
-      <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="600.0" style="-fx-background-color: #4873A3;">
+      <MenuBar prefHeight="25.0" prefWidth="600.0" style="-fx-background-color: #4873A3;">
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
@@ -38,6 +38,6 @@
          </font>
       </Text>
       <Button fx:id="puppiesButton" layoutX="271.0" layoutY="250.0" mnemonicParsing="false" onAction="#goToPuppiesPage" text="Puppies" />
-      <Button layoutX="263.0" layoutY="319.0" mnemonicParsing="false" text="Rain Drops" />
+      <Button fx:id="rainButton" layoutX="263.0" layoutY="319.0" mnemonicParsing="false" onAction="#goToRainDropsPage" text="Rain Drops" />
    </children>
 </AnchorPane>

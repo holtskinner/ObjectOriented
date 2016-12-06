@@ -26,12 +26,24 @@ public class IndexController extends ViewController{
     Button rainButton;
     
     @FXML
-    public void goToPuppiesPage() {
-        ViewController.switchTo("Puppy");
- 
-        PuppyController controller = (PuppyController)getControllerByName("Puppy");
-        if (controller != null) {
-            
+    public void goToPuppiesPage() throws Exception {
+        try {
+           ViewController.switchTo("Puppy");
+           ViewController controller = (ViewController)getControllerByName("Puppy");
+        } catch (Exception ex) {
+            System.out.println("Could not load Controller");
         }
+    }
+    
+    @FXML
+    public void goToRainDropsPage() throws Exception {
+        try {
+            ViewController.switchTo("RainDrops");
+            ViewController controller = (ViewController)getControllerByName("RainDrops");
+        } catch (Exception ex) {
+            System.out.println("Could not load Controller");
+
+        }
+
     }
 }
