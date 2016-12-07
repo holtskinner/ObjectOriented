@@ -11,16 +11,6 @@
    <children>
       <MenuBar layoutX="-1.0" prefHeight="25.0" prefWidth="600.0" style="-fx-background-color: #4873A3;">
         <menus>
-          <Menu mnemonicParsing="false" text="File">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
-            </items>
-          </Menu>
           <Menu mnemonicParsing="false" text="Help">
             <items>
               <MenuItem mnemonicParsing="false" onAction="#displayAbout" text="About" />

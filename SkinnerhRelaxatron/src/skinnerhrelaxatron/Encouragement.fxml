@@ -28,11 +28,7 @@
             </Menu>
          </menus>
       </MenuBar>
-      <Text fx:id="outputText" layoutX="107.0" layoutY="189.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Could Not Load Message">
-         <font>
-            <Font name="Comic Sans MS" size="34.0" />
-         </font>
-      </Text>
-      <Button fx:id="backButton" layoutX="275.0" layoutY="47.0" mnemonicParsing="false" onAction="#goToIndexPage" style="-fx-background-color: #4873A3;" text="Go Back" />
+      <Button fx:id="backButton" layoutX="266.0" layoutY="47.0" mnemonicParsing="false" onAction="#goToIndexPage" style="-fx-background-color: #4873A3;" text="Go Back" />
+      <TextField fx:id="outputText" alignment="CENTER" layoutX="56.0" layoutY="178.0" onMouseClicked="#handleClick" prefHeight="44.0" prefWidth="490.0" style="-fx-background-color: #4873A3;" />
    </children>
 </AnchorPane>

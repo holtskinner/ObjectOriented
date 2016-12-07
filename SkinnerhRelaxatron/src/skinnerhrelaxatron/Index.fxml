@@ -12,16 +12,6 @@
    <children>
       <MenuBar prefHeight="25.0" prefWidth="600.0" style="-fx-background-color: #4873A3;">
         <menus>
-          <Menu mnemonicParsing="false" text="File">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
-            </items>
-          </Menu>
           <Menu mnemonicParsing="false" text="Help">
             <items>
               <MenuItem mnemonicParsing="false" onAction="#displayAbout" text="About" />
@@ -29,13 +19,13 @@
           </Menu>
         </menus>
       </MenuBar>
-      <Text layoutX="83.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to the Relaxatron">
+      <Text layoutX="83.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to the Relaxatron" textOrigin="CENTER">
          <font>
             <Font name="Comic Sans MS" size="34.0" />
          </font>
       </Text>
       <Button fx:id="puppiesButton" layoutX="266.0" layoutY="173.0" mnemonicParsing="false" onAction="#goToPuppiesPage" style="-fx-background-color: #4873A3;" text="Puppies" />
-      <Button fx:id="rainButton" layoutX="258.0" layoutY="217.0" mnemonicParsing="false" onAction="#goToRainDropsPage" style="-fx-background-color: #4873A3;" text="Rain Drops" />
-      <Button fx:id="encouragementButton" layoutX="225.0" layoutY="283.0" mnemonicParsing="false" onAction="#goToEncouragementPage" style="-fx-background-color: #4873A3;" text="Words of Encouragement" />
+      <Button fx:id="rainButton" layoutX="258.0" layoutY="214.0" mnemonicParsing="false" onAction="#goToRainDropsPage" style="-fx-background-color: #4873A3;" text="Rain Drops" />
+      <Button fx:id="encouragementButton" layoutX="213.0" layoutY="255.0" mnemonicParsing="false" onAction="#goToEncouragementPage" style="-fx-background-color: #4873A3;" text="Words of Encouragement" />
    </children>
 </AnchorPane>

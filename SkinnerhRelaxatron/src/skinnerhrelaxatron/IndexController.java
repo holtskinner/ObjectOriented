@@ -1,16 +1,7 @@
 package skinnerhrelaxatron;
 
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.ResourceBundle;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
 
 /**
  * FXML Controller class
@@ -34,7 +25,7 @@ public class IndexController extends ViewController {
            ViewController.switchTo("Puppy");
            PuppyController controller = (PuppyController)getControllerByName("Puppy");
         } catch (Exception ex) {
-            System.out.println("Could not load Controller");
+            System.out.println(ex);
         }
     }
     
@@ -55,7 +46,7 @@ public class IndexController extends ViewController {
             ViewController.switchTo("Encouragement");
             EncouragementController controller = (EncouragementController)getControllerByName("Encouragement");
         } catch (Exception ex) {
-            System.out.println("Could not load Controller");
+            System.out.println(ex);
         }
     }
 }
