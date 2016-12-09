@@ -20,17 +20,15 @@ import javafx.scene.control.TextField;
  * @author HS047694
  */
 public class EncouragementController extends ViewController {
-    
-    String urlString = "http://ec2-35-163-155-173.us-west-2.compute.amazonaws.com/api.php?fortune";
-    
+
     @FXML
     Button backButton;
-    
+
     @FXML
     TextField outputText;
-    
+
     String filename = "wordsOfEncouragement.txt";
- 
+
     ArrayList<String> encouragementArray;
 
     @Override
@@ -38,7 +36,7 @@ public class EncouragementController extends ViewController {
         outputText.setText("Click me.");
         encouragementArray = new ArrayList<>();
     }
-    
+
     @FXML
     private void goToIndexPage() throws Exception {
         ViewController.switchTo("Index");
@@ -49,65 +47,32 @@ public class EncouragementController extends ViewController {
             throw new Exception(ex);
         }
     }
-    
+
     @FXML
     private void handleClick() throws Exception {
         try {
-            String output = callURL(urlString);
+            Fortune fortune = new Fortune();
+            String output = fortune.getText();
             outputText.setText(output);
+
             if (!encouragementArray.contains(output)) {
                 encouragementArray.add(output);
             }
         } catch (Exception ex) {
             throw new Exception(ex);
-        }   
+        }
     }
-    
-    private static String callURL(String urlString) throws IOException {
 
-            URLConnection urlConn = null; //Assign it to null, just to be safe
-            InputStreamReader input = null;
-            String output = null;
-            BufferedReader bufferedReader = null;
-            
-            try {
-                URL url = new URL(urlString);
-                urlConn = url.openConnection();
-                if (urlConn != null && urlConn.getInputStream() != null) {
-
-                    input = new InputStreamReader(urlConn.getInputStream());
-                    bufferedReader = new BufferedReader(input);
-                    output = bufferedReader.readLine();
-
-                    if (output == null) {
-                        output = "";
-                    }
-
-                    bufferedReader.close();
-                }
-                
-                //I would have put this in a finally, but it can throw an exception as well
-                if(input != null) {
-                    input.close();
-                }
-                
-            } catch (IOException ex) {
-                    System.out.println(ex);
-            }
-
-            return output;
-	}
-    
     private void writeStringArrayToFile(ArrayList<String> array) throws IOException {
-        
+
         try (BufferedWriter outputWriter = new BufferedWriter(new FileWriter(filename))) {
-            
+
             for (String arrayItem : array) {
                 outputWriter.write(arrayItem + "\n");
             }
-            
+
             outputWriter.flush();
-            
+
         } catch (Exception ex) {
             throw new IOException(ex);
         }
